@@ -1,0 +1,112 @@
+{
+    "record": {
+        "schema_version": "27560-WD4",
+        "record_id": "63ded36f-4acd-4f3c-991e-6cb636698523",
+        "authorty": "Data Protection Commission, Ireland",
+        "pii_principal": "Jane Doe"
+    },
+    "pii_processing": {
+        "privacy_notice": "https://example.com/notice/wd4",
+        "language": "en",
+        "purposes": [
+            {
+                "purpose": "Send Newsletters with Seasonal Offers",
+                "purpose_category": "Marketing",
+                "lawful_basis": "consent",
+                "services": [ "News Website XYZ Subscription" ],
+                "pii": [
+                    { "category": "email" },
+                    { "category": "location - city", "sensitive": true },
+                    { "category": "religion", "special": true }
+                ],
+                "pii_controllers": [ "C01", "C02" ],
+                "collection_method": [ 
+                    "directly provided by individual", 
+                    "inferred from service use" 
+                ],
+                "processing_method": [ "profiling" ],
+                "storage_locations": [ "IRE" ],
+                "storage_duration": 63115200,
+                "processing_location": [ "EU" ],
+                "geographic_restrictions": [ "EU" ],
+                "jurisdiction": "EU",
+                "recipient_third_parties": [ "T01", "T02" ],
+                "withdrawal_method": "https://example.com/notice",
+                "privacy_rights": [ 
+                    "object to direct marketing", 
+                    "data portability" ],
+                "impact_assessment": "https://example.com/dpia"
+            }
+        ]
+    },
+    "parties": [
+        {
+            "party_id": "C01",
+            "party_address": "Dublin, Ireland",
+            "party_url": "https://example.com/AcmeInc",
+            "party_name": "Acme Inc.",
+            "party_contact": [ 
+                { 
+                    "contact_type": "email", 
+                    "contact_information": "contact@acme.example.com" 
+                }
+            ],
+            "party_category": "News Service Provider"
+        },
+        {
+            "party_id": "C02",
+            "party_address": "Frankfurt, Germany",
+            "party_url": "https://example.com/BetaInc",
+            "party_name": "Beta Inc.",
+            "party_contact": [ 
+                { 
+                    "contact_type": "email", 
+                    "contact_information": "hello@beta.example.com" 
+                }
+            ],
+            "party_category": "Marketing Provider"
+        },
+        {
+            "party_id": "T01",
+            "party_address": "Paris, France",
+            "party_url": "https://example.com/Delta",
+            "party_name": "Delta",
+            "party_contact": [ 
+                { 
+                    "contact_type": "phone", 
+                    "contact_information": "+00-000-000-000" 
+                }
+            ],
+            "party_category": "Recipient"
+        },
+        {
+            "party_id": "T01",
+            "party_address": "Dublin, Ireland",
+            "party_url": "https://example.com/Epsilon",
+            "party_name": "Epsilon Co.",
+            "party_contact": [ 
+                { 
+                    "contact_type": "post", 
+                    "contact_information": "11 Rue St., Dublin, Irealand"
+                }
+            ],
+            "party_category": "Recipient"
+        }
+    ],
+    "events": [
+        {
+            "timestamp": "2021-05-28T12:24:00",
+            "duration": "63115200",
+            "type": "explicit",
+            "state": "given",
+            "actor": "pii_principal"
+        },
+        {
+            "timestamp": "2022-02-21T20:44:00",
+            "duration": "0",
+            "type": "regular",
+            "state": "withdrawn",
+            "actor": "pii_principal"
+        }
+    ]
+}

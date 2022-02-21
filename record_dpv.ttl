@@ -1,0 +1,87 @@
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#> .
+@prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
+@prefix dpv-org: <https://w3id.org/dpv/dpv-org#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix : <https://example.com/cr/example#> .
+
+:ConsentRecord a dpv:Consent ;
+    dct:hasVersion "27560-WD4" ;
+    dpv:hasIdentifier "63ded36f-4acd-4f3c-991e-6cb636698523" ;
+    dpv:hasAuthority :IEDPC ;
+    dpv:hasDataSubject "Jane Doe" ;
+    dpv:hasProvisionBy dpv:DataSubject ;
+    dpv:hasProvisionTime "2021-05-28T12:24:00"^^xsd:dateTime ;
+    dpv:isExplicit true ;
+    dpv:hasDuration 63115200 ;
+    dpv:hasWithdrawalBy dpv:DataSubject ;
+    dpv:hasWithdrawalTime "2022-02-21T20:44:00"^^xsd:dateTime ;
+    dpv:hasPersonalDataHandling [
+        a dpv:PersonalDataHandling ;
+        dpv:hasOrganisationalMeasure :PrivacyNoticeWD4 ;
+        dct:language "en" ;
+        dpv:hasPurpose [
+            a dpv:Purpose ;
+            dpv:isSubTypeOf dpv:Marketing ;
+            dct:title "Send Newsletters with Seasonal Offers"@en ;
+            dpv:hasLegalBasis dpv:Consent ;
+            dpv-org:hasService "News Website XYZ Subscription" ;
+            dpv:hasPersonalData dpv-pd:Email, dpv-pd:City, dpv-pd:Religion ;
+            dpv:hasDataController :C01, :C02 ;
+            dpv:hasProcessing [ 
+                a dpv:Processing ;
+                dpv:isSubTypeOf dpv:Collect ;
+                dpv:hasDataSource dpv:DataSubject ;
+                dpv:hasDataSource [
+                    a dpv:Processing ;
+                    dpv:isSubTypeOf dpv:Dervice ;
+                    dpv:hasDataSource dpv:ServiceConsumptionBehavior ;
+                    dpv:hasLocation "EU" ;
+                ] ] ;
+            dpv:hasProcessing dpv:Profiling ;
+            dpv:hasStorage [
+                a dpv:StorageCondition ;
+                dpv:hasLocation "IE" ;
+                dpv:hasDuration 63115200 ;
+            ] ;
+            dpv:hasJurisdiction "EU" ;
+            dpv:hasRecipientThirdParty :T01, :T02 ;
+            dpv:hasWithdrawalMethod "https://example.com/notice" ;
+            dpv:hasRight dpv-gdpr:A20, dpv-gdpr:A21 ;
+            dpv:hasOrganisationalMeasure :DPIA ;
+        ] ;
+    ] .
+
+:DPIA a dpv:OrganisationalMeasure ;
+    dpv:isSubTypeOf dpv:DPIA ;
+    dct:created "2020-09-01"^^xsd:date .
+
+:C01 a dpv:LegalEntity ;
+    dpv:hasAddress "Dublin, Ireland" ;
+    dpv:hasAddress "https://example.com/AcmeInc"^^xsd:anyURI ;
+    dpv:hasName "Acme Inc." ;
+    dpv:hasContact "mailto:contact@acme.example.com" ;
+    dct:description "News Service Provider"@en .
+
+:C02 a dpv:LegalEntity ;
+    dpv:hasAddress "Frankfurt, Germany" ;
+    dpv:hasAddress "https://example.com/BetaInc"^^xsd:anyURI ;
+    dpv:hasName "Beta Inc." ;
+    dpv:hasContact "mailto:hello@beta.example.com" ;
+    dct:description "Marketing Provider"@en .
+
+:T01 a dpv:LegalEntity ;
+    dpv:hasAddress "Dublin, Ireland" ;
+    dpv:hasAddress "https://example.com/Epsilon"^^xsd:anyURI ;
+    dpv:hasName "Epsilon Co." ;
+    dpv:hasContact "post:11 Rue St., Dublin, Ireland" ;
+    dct:description dpv:Recipient .
+
+:T02 a dpv:LegalEntity ;
+    dpv:hasAddress "Paris, France" ;
+    dpv:hasAddress "https://example.com/Delta"^^xsd:anyURI ;
+    dpv:hasName "Delta" ;
+    dpv:hasContact "phone:+00-000-000-000" ;
+    dct:description dpv:Recipient .
