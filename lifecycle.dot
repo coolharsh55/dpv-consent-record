@@ -8,5 +8,5 @@ digraph G {
         Withdrawn, Expired, Invalidated, Halted ;
     }
     Expired -> end [ltail=cluster_T] ;
-    Given -> NoticeShown [label="confirm"] ;
+    Given -> NoticeShown [label="re-confirm"] ;
 }
