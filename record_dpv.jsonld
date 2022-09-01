@@ -1,0 +1,288 @@
+{
+  "@graph": [
+    {
+      "@id": "https://example.com/records#63ded36f-4acd-4f3c-991e-6cb636698523",
+      "@type": "https://w3id.org/dpv#ConsentRecord",
+      "http://purl.org/dc/terms/hasPart": {
+        "@type": [
+          "https://w3id.org/dpv#ConsentGiven",
+          "https://w3id.org/dpv#ExplicitlyExpressedConsent"
+        ],
+        "http://purl.org/dc/terms/date": {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2021-05-28T12:24:00"
+        },
+        "https://w3id.org/dpv#hasDuration": 63115200,
+        "https://w3id.org/dpv#hasEntity": "96121fde-199f-4848-8942-4436e270513a"
+      },
+      "http://purl.org/dc/terms/hasVersion": "27560-WD5",
+      "https://w3id.org/dpv#hasAuthority": {
+        "@id": "https://example.com/records#DPC-IE"
+      },
+      "https://w3id.org/dpv#hasConsentStatus": {
+        "@id": "https://w3id.org/dpv#ConsentWithdrawn"
+      },
+      "https://w3id.org/dpv#hasDataSubject": "96121fde-199f-4848-8942-4436e270513a",
+      "https://w3id.org/dpv#hasIdentifier": "63ded36f-4acd-4f3c-991e-6cb636698523",
+      "https://w3id.org/dpv#hasNotice": {
+        "@id": "https://example.com/notice/WD5"
+      },
+      "https://w3id.org/dpv#hasPart": {
+        "@type": "https://w3id.org/dpv#ConsentWithdrawn",
+        "http://purl.org/dc/terms/date": {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2022-02-21T20:44:00"
+        },
+        "https://w3id.org/dpv#hasDuration": 0,
+        "https://w3id.org/dpv#hasEntity": "96121fde-199f-4848-8942-4436e270513a"
+      },
+      "https://w3id.org/dpv#hasPurpose": {
+        "@type": "https://w3id.org/dpv#Purpose",
+        "http://purl.org/dc/terms/isPartOf": {
+          "@type": "https://w3id.org/dpv/dpv-tech#Services",
+          "http://purl.org/dc/terms/title": "News Website XYZ Subscription"
+        },
+        "http://purl.org/dc/terms/title": {
+          "@value": "Send Newsletters with Seasonal Offers"
+        },
+        "https://w3id.org/dpv#hasDataController": [
+          {
+            "@id": "https://example.com/records#C01"
+          },
+          {
+            "@id": "https://example.com/records#C02"
+          }
+        ],
+        "https://w3id.org/dpv#hasDataSource": [
+          {
+            "@type": "https://w3id.org/dpv#DataSource",
+            "https://w3id.org/dpv#hasDataSource": {
+              "@id": "https://w3id.org/dpv#DataSubject"
+            },
+            "https://w3id.org/dpv#hasProcessing": {
+              "@id": "https://w3id.org/dpv#Collect"
+            }
+          },
+          {
+            "@type": "https://w3id.org/dpv#DataSource",
+            "https://w3id.org/dpv#hasDataSource": "Service Usage",
+            "https://w3id.org/dpv#hasProcessing": {
+              "@id": "https://w3id.org/dpv#Infer"
+            }
+          }
+        ],
+        "https://w3id.org/dpv#hasJurisdiction": {
+          "@id": "https://w3id.org/dpv/dpv-legal#EU"
+        },
+        "https://w3id.org/dpv#hasLegalBasis": {
+          "@id": "https://w3id.org/dpv#Consent"
+        },
+        "https://w3id.org/dpv#hasOrganisationalMeasure": [
+          {
+            "@id": "https://example.com/CoC-news-media"
+          },
+          {
+            "@id": "https://example.com/DPIA"
+          }
+        ],
+        "https://w3id.org/dpv#hasPersonalData": [
+          {
+            "@id": "https://example.com/records#PD1234"
+          },
+          {
+            "@id": "https://example.com/records#PD1235"
+          }
+        ],
+        "https://w3id.org/dpv#hasProcessing": [
+          {
+            "@id": "https://w3id.org/dpv#Collect"
+          },
+          {
+            "@id": "https://w3id.org/dpv#Store"
+          },
+          {
+            "@id": "https://w3id.org/dpv#Profiling"
+          },
+          {
+            "http://www.w3.org/ns/odrl/2/constraint": {
+              "http://www.w3.org/ns/odrl/2/leftOperand": {
+                "@id": "http://www.w3.org/ns/odrl/2/spatial"
+              },
+              "http://www.w3.org/ns/odrl/2/operator": {
+                "@id": "http://www.w3.org/ns/odrl/2/lteq"
+              },
+              "http://www.w3.org/ns/odrl/2/rightOperand": {
+                "@id": "https://w3id.org/dpv/dpv-legal#EU"
+              }
+            }
+          }
+        ],
+        "https://w3id.org/dpv#hasRecipient": [
+          {
+            "@id": "https://example.com/records#T01"
+          },
+          {
+            "@id": "https://example.com/records#T02"
+          }
+        ],
+        "https://w3id.org/dpv#hasRight": [
+          {
+            "@id": "https://example.com/object-to-direct-marketing"
+          },
+          {
+            "@id": "https://example.com/data-portability"
+          }
+        ],
+        "https://w3id.org/dpv#hasStorageCondition": {
+          "https://w3id.org/dpv#hasDuration": 63115200,
+          "https://w3id.org/dpv#hasLocation": {
+            "@id": "https://w3id.org/dpv/dpv-legal#IE"
+          }
+        },
+        "https://w3id.org/dpv#hasWithdrawalMethod": "https://example.com/notice",
+        "https://w3id.org/dpv#isSubTypeOf": {
+          "@id": "https://w3id.org/dpv#Marketing"
+        }
+      }
+    },
+    {
+      "@id": "https://example.com/DPIA",
+      "@type": "https://w3id.org/dpv#DPIA",
+      "http://purl.org/dc/terms/created": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-09-01"
+      }
+    },
+    {
+      "@id": "https://example.com/CoC-news-media",
+      "@type": "https://w3id.org/dpv#CodeOfConduct"
+    },
+    {
+      "@id": "https://example.com/data-portability",
+      "@type": "https://w3id.org/dpv/dpv-gdpr#A20"
+    },
+    {
+      "@id": "https://example.com/object-to-direct-marketing",
+      "@type": "https://w3id.org/dpv/dpv-gdpr#A21"
+    },
+    {
+      "@id": "https://example.com/records#C01",
+      "@type": [
+        "https://w3id.org/dpv#LegalEntity",
+        "https://w3id.org/dpv#DataController"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@value": "Service Provider for News"
+      },
+      "https://w3id.org/dpv#hasAddress": [
+        "Dublin, Ireland",
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://example.com/AcmeInc"
+        }
+      ],
+      "https://w3id.org/dpv#hasContact": [
+        "mailto:contact@acme.example.com",
+        {
+          "@type": "https://w3id.org/dpv/dpv-org#SocialMediaHandle",
+          "https://w3id.org/dpv#hasIdentifier": "@acme"
+        }
+      ],
+      "https://w3id.org/dpv#hasName": "Acme Inc."
+    },
+    {
+      "@id": "https://example.com/records#C02",
+      "@type": [
+        "https://w3id.org/dpv#LegalEntity",
+        "https://w3id.org/dpv#DataController"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@value": "Service Provider for Payment"
+      },
+      "https://w3id.org/dpv#hasAddress": [
+        "Frankfurt, Germany",
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://example.com/BetaInc"
+        }
+      ],
+      "https://w3id.org/dpv#hasName": "Beta Inc."
+    },
+    {
+      "@id": "https://example.com/records#T01",
+      "@type": [
+        "https://w3id.org/dpv#LegalEntity",
+        "https://w3id.org/dpv#Recipient",
+        "https://w3id.org/dpv#ThirdParty"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@value": "Recipient for Analytics"
+      },
+      "https://w3id.org/dpv#hasAddress": [
+        "Paris, France",
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://example.com/Delta"
+        }
+      ],
+      "https://w3id.org/dpv#hasName": "Delta"
+    },
+    {
+      "@id": "https://example.com/records#T02",
+      "@type": [
+        "https://w3id.org/dpv#LegalEntity",
+        "https://w3id.org/dpv#Recipient",
+        "https://w3id.org/dpv#ThirdParty"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@value": "Recipient for Market Research"
+      },
+      "https://w3id.org/dpv#hasAddress": [
+        "Dublin, Ireland",
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://example.com/Epsilon"
+        }
+      ],
+      "https://w3id.org/dpv#hasContact": "post:11 Rue St., Dublin, Ireland",
+      "https://w3id.org/dpv#hasName": "Epsilon Co."
+    },
+    {
+      "@id": "https://example.com/records#DPC-IE",
+      "@type": "https://w3id.org/dpv#DataProtectionAuthority",
+      "http://purl.org/dc/terms/description": {
+        "@value": "Lead Authority"
+      },
+      "https://w3id.org/dpv#hasAddress": [
+        "Dublin, Ireland",
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://example.com/dpc"
+        }
+      ],
+      "https://w3id.org/dpv#hasName": {
+        "@value": "Data Protection Commission"
+      }
+    },
+    {
+      "@id": "https://example.com/records#PD1234",
+      "@type": "https://w3id.org/dpv#PersonalData",
+      "https://w3id.org/dpv#hasContext": {
+        "@id": "https://w3id.org/dpv#Required"
+      },
+      "https://w3id.org/dpv#isSubTypeOf": {
+        "@id": "https://w3id.org/dpv/dpv-pd#Email"
+      }
+    },
+    {
+      "@id": "https://example.com/records#PD1235",
+      "@type": "https://w3id.org/dpv#PersonalData",
+      "https://w3id.org/dpv#hasContext": {
+        "@id": "https://w3id.org/dpv#Optional"
+      },
+      "https://w3id.org/dpv#isSubTypeOf": {
+        "@id": "https://w3id.org/dpv/dpv-pd#Name"
+      }
+    }
+  ]
+}

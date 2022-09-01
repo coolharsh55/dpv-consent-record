@@ -1,112 +1,109 @@
 {
     "record": {
-        "schema_version": "27560-WD4",
+        "schema_version": "27560-WD5",
         "record_id": "63ded36f-4acd-4f3c-991e-6cb636698523",
         "authorty": "Data Protection Commission, Ireland",
-        "pii_principal": "Jane Doe"
+        "pii_principal_id": "96121fde-199f-4848-8942-4436e270513a"
     },
     "pii_processing": {
-        "privacy_notice": "https://example.com/notice/wd4",
+        "privacy_notice": "https://example.com/notice/WD5",
         "language": "en",
         "purposes": [
             {
                 "purpose": "Send Newsletters with Seasonal Offers",
-                "purpose_category": "Marketing",
+                "purpose_type": "Marketing",
                 "lawful_basis": "consent",
-                "services": [ "News Website XYZ Subscription" ],
-                "pii": [
-                    { "category": "email" },
-                    { "category": "location - city", "sensitive": true },
-                    { "category": "religion", "special": true }
+                "pii_information": [
+                    {
+                        "pii_type": "email",
+                        "pii_optional": false,
+                        "sensitive_pii_category": false,
+                        "special_pii_category": false,
+                    }
+                    {
+                        "pii_type": "name",
+                        "pii_optional": true,
+                        "sensitive_pii_category": false,
+                        "special_pii_category": false,
+                    }
                 ],
                 "pii_controllers": [ "C01", "C02" ],
                 "collection_method": [ 
                     "directly provided by individual", 
                     "inferred from service use" 
                 ],
-                "processing_method": [ "profiling" ],
-                "storage_locations": [ "IRE" ],
-                "storage_duration": 63115200,
-                "processing_location": [ "EU" ],
+                "processing_method": [ "collect", "store", "profiling" ],
+                "storage_locations": [ "IE" ],
+                "retention_period": 63115200,
+                "processing_locations": [ "IE" ],
                 "geographic_restrictions": [ "EU" ],
+                "services": [ "News Website XYZ Subscription" ],
                 "jurisdiction": "EU",
                 "recipient_third_parties": [ "T01", "T02" ],
                 "withdrawal_method": "https://example.com/notice",
-                "privacy_rights": [ 
-                    "object to direct marketing", 
-                    "data portability" ],
+                "privacy_rights_reference": [ 
+                    "https://example.com/object-to-direct-marketing", 
+                    "https://example.com/data-portability" ],
+                "codes_of_conduct": "https://example.com/CoC-news-media",
                 "impact_assessment": "https://example.com/dpia"
             }
         ]
     },
-    "parties": [
+    "party_identification": [
         {
             "party_id": "C01",
             "party_address": "Dublin, Ireland",
+            "party_email": "acme@example.com",
             "party_url": "https://example.com/AcmeInc",
             "party_name": "Acme Inc.",
+            "party_role": "PII Controller",
             "party_contact": [ 
                 { 
-                    "contact_type": "email", 
-                    "contact_information": "contact@acme.example.com" 
+                    "contact_type": "SocialMedia", 
+                    "contact_information": "@acme"
                 }
             ],
-            "party_category": "News Service Provider"
+            "party_type": "Service Provider for News"
         },
         {
             "party_id": "C02",
             "party_address": "Frankfurt, Germany",
             "party_url": "https://example.com/BetaInc",
             "party_name": "Beta Inc.",
-            "party_contact": [ 
-                { 
-                    "contact_type": "email", 
-                    "contact_information": "hello@beta.example.com" 
-                }
-            ],
-            "party_category": "Marketing Provider"
+            "party_role": "PII Controller",
+            "party_type": "Service Provider for Payment"
         },
         {
             "party_id": "T01",
             "party_address": "Paris, France",
             "party_url": "https://example.com/Delta",
             "party_name": "Delta",
-            "party_contact": [ 
-                { 
-                    "contact_type": "phone", 
-                    "contact_information": "+00-000-000-000" 
-                }
-            ],
-            "party_category": "Recipient"
+            "party_role": "Third Party",
+            "party_type": "Recipient for Analytics"
         },
         {
-            "party_id": "T01",
+            "party_id": "T02",
             "party_address": "Dublin, Ireland",
             "party_url": "https://example.com/Epsilon",
             "party_name": "Epsilon Co.",
-            "party_contact": [ 
-                { 
-                    "contact_type": "post", 
-                    "contact_information": "11 Rue St., Dublin, Irealand"
-                }
-            ],
-            "party_category": "Recipient"
+            "party_role": "Third Party",
+            "party_type": "Recipient for Market Research"
         }
     ],
-    "events": [
+    "event": [
         {
-            "timestamp": "2021-05-28T12:24:00",
+            "event_time": "2021-05-28T12:24:00",
             "duration": "63115200",
+            "entity_id": "96121fde-199f-4848-8942-4436e270513a",
             "type": "explicit",
             "state": "given",
-            "actor": "pii_principal"
         },
         {
-            "timestamp": "2022-02-21T20:44:00",
+            "event_time": "2022-02-21T20:44:00",
             "duration": "0",
-            "type": "regular",
+            "entity_id": "96121fde-199f-4848-8942-4436e270513a",
+            "type": "explicit",
             "state": "withdrawn",
-            "actor": "pii_principal"
         }
     ]
 }
