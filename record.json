@@ -7,7 +7,6 @@
     "pii_processing": {
         "privacy_notice": "https://example.com/notice/WD5",
         "language": "en",
-        "authorty": "DPC-IE",
         "purposes": [ {
             "purpose": "Send Newsletters with Seasonal Offers",
             "purpose_type": "Marketing",
@@ -15,15 +14,15 @@
             "pii_information": [
                 {
                     "pii_type": "email",
-                    "pii_optional": false,
+                    "pii_optional": true,
                     "sensitive_pii_category": false,
                     "special_pii_category": false,
                 }
                 {
-                    "pii_type": "name",
-                    "pii_optional": true,
-                    "sensitive_pii_category": false,
-                    "special_pii_category": false,
+                    "pii_type": "passport",
+                    "pii_optional": false,
+                    "sensitive_pii_category": true,
+                    "special_pii_category": true,
                 }
             ],
             "pii_controllers": [ "C01", "C02" ],
@@ -40,11 +39,13 @@
             "jurisdiction": "EU",
             "recipient_third_parties": [ "T01", "T02" ],
             "withdrawal_method": "https://example.com/notice",
-            "privacy_rights_reference": [ 
-                "https://example.com/object-to-direct-marketing", 
-                "https://example.com/data-portability" ],
+            "privacy_rights": { 
+                "Right to Object": "https://example.com/object-to-direct-marketing", 
+                "Data Portability": "https://example.com/data-portability"
+            },
             "codes_of_conduct": "https://example.com/CoC-news-media",
-            "impact_assessment": "https://example.com/dpia"
+            "impact_assessment": "https://example.com/dpia",
+            "authorty_party": "DPC-IE",
         } ]
     },
     "party_identification": [
@@ -55,13 +56,10 @@
             "party_url": "https://example.com/AcmeInc",
             "party_name": "Acme Inc.",
             "party_role": "PII Controller",
-            "party_contact": [ 
-                { 
-                    "contact_type": "SocialMedia", 
-                    "contact_information": "@acme" 
-                }
-            ],
-            "party_type": "Service Provider for News"
+            "party_contact": {
+                "SocialMedia": "@acme"
+            },
+            "party_type": "Service Provider"
         },
         {
             "party_id": "C02",
@@ -69,15 +67,15 @@
             "party_url": "https://example.com/BetaInc",
             "party_name": "Beta Inc.",
             "party_role": "PII Controller",
-            "party_type": "Service Provider for Payment"
+            "party_type": "Service Provider"
         },
         {
             "party_id": "T01",
             "party_address": "Paris, France",
             "party_url": "https://example.com/Delta",
             "party_name": "Delta",
-            "party_role": "Third Party",
-            "party_type": "Recipient for Analytics"
+            "party_role": "PII Processor",
+            "party_type": "Recipient"
         },
         {
             "party_id": "T02",
@@ -85,12 +83,12 @@
             "party_url": "https://example.com/Epsilon",
             "party_name": "Epsilon Co.",
             "party_role": "Third Party",
-            "party_type": "Recipient for Market Research"
+            "party_type": "Recipient"
         },
         {
             "party_id": "DPC-IE",
             "party_address": "Dublin, Ireland",
-            "party_url": "https://example.com/dpc",
+            "party_url": "https://www.dataprotection.ie/",
             "party_name": "Data Protection Commission",
             "party_role": "Data Protection Authority",
             "party_type": "Lead Authority"
@@ -99,17 +97,17 @@
     "event": [
         {
             "event_time": "2021-05-28T12:24:00",
-            "event_duration": "63115200",
+            "validity_duration": 63115200,
             "entity_id": "96121fde-199f-4848-8942-4436e270513a",
             "event_type": "explicit",
-            "event_state": "given",
+            "event_state": "consent given",
         },
         {
             "event_time": "2022-02-21T20:44:00",
-            "event_duration": "0",
+            "validity_duration": 0,
             "entity_id": "96121fde-199f-4848-8942-4436e270513a",
             "event_type": "explicit",
-            "event_state": "withdrawn",
+            "event_state": "consent withdrawn",
         }
     ]
 }
