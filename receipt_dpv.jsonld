@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "@vocab": "https://w3id.org/dpv#",
+    "dpv": "https://w3id.org/dpv#",
+    "dpv-gdpr": "https://w3id.org/dpv/dpv-gdpr#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "ex": "https://example.com/"
+  },
+  "@id": "ex:a1368f5d-0d26-453c-bd55-b7abacc286fa",
+  "@type": "dpv:ConsentReceipt",
+  "dct:conformsTo": "27560-CIB",
+  "dct:subject": {
+    "@id": "ex:63ded36f-4acd-4f3c-991e-6cb636698523",
+    "@type": "dpv:ConsentRecord",
+    "hasPersonalDataHandling": {
+      "hasNotice": { "@id": "https://example.com/notice/29184" },
+      "hasAuthority": { "@id": "https://www.dataprotection.ie/" },
+      "hasPurpose": [{
+        "dct:title": "Send Newsletters with Seasonal Offers",
+        "@type": "dpv:Marketing",
+        "hasLegalBasis": { "@id": "dpv:Consent" },
+        "hasPersonalData": [
+          { "@type": "dpv:pd_Email", 
+            "hasContext": "dpv:Optional" },
+          { "@type": "dpv:pd_Passport", 
+            "@type": "dpv:SpecialCategoryPersonalData",
+            "hasContext": "dpv:Required" } 
+        ],
+        "hasDataController": [ { "@id": "ex:C01" }, { "@id": "ex:C02" }],
+        "hasStorageCondition": {
+          "hasLocation": "IE",
+          "hasDuration": 63115200
+        },
+        "hasJurisdiction": "EU",
+        "dct:subject": [ "News Website XYZ Subscription" ],
+        "hasRecipient": [ { "@id": "ex:T01" }, { "@id": "ex:T02" } ],
+        "hasRight": [
+          {
+            "@type": [ "dpv-gdpr:A7-3", "dpv-gdpr:A20" ],
+            "isExercisedAt": "ex:notice"
+          }
+        ],
+        "hasOrganisationalMeasure": [
+          {
+            "@id": "ex:CoC-news-media",
+            "@type": "dpv:CodeOfConduct"
+          }, {
+            "@id": "ex:dpia",
+            "@type": "dpv:DPIA"
+          }
+        ]
+      }]
+    },
+    "hasEntity": [
+      {
+        "@id": "ex:C01",
+        "foaf:mbox": "acme@example.com",
+        "foaf:page": "https://example.com/AcmeInc",
+        "foaf:name": "Acme Inc.",
+        "@type": [ "dpv:DataController", "dpv:ServiceProvider" ],
+        "foaf:OnlineAccount": { 
+          "foaf:name": "SocialMedia", 
+          "foaf:accountName": "@acme" 
+        }
+      },
+      {
+        "@id": "ex:C02",
+        "foaf:page": "https://example.com/BetaInc",
+        "foaf:name": "Beta Inc.",
+        "@type": [ "dpv:DataController", "dpv:ServiceProvider" ]
+      },
+      {
+        "@id": "ex:T01",
+        "foaf:page": "https://example.com/Delta",
+        "foaf:name": "Delta",
+        "@type": [ "dpv:DataProcessor", "dpv:Recipient" ]
+      },
+      {
+        "@id": "ex:T02",
+        "foaf:page": "https://example.com/Epsilon",
+        "foaf:name": "Epsilon Co.",
+        "@type": [ "dpv:ThirdParty", "dpv:Recipient" ]
+      },
+      {
+        "@id": "https://www.dataprotection.ie/",
+        "foaf:page": "https://www.dataprotection.ie/",
+        "foaf:name": "Data Protection Commission",
+        "@type": [ "dpv:DataProtectionAuthority", "dpv-gdpr:LeadSA" ]
+      }
+    ],
+    "dct:hasPart": [
+      {
+        "dct:date": "2021-05-28T12:24:00",
+        "hasDuration": 63115200,
+        "@type": "dpv:ExplicitlyExpressedConsent",
+        "hasConsentStatus": "dpv:ConsentGiven"
+      },
+      {
+        "dct:date": "2022-02-21T20:44:00",
+        "hasDuration": 0,
+        "@type": "dpv:ExplicitlyExpressedConsent",
+        "hasConsentStatus": "dpv:ConsentWithdrawn"
+      }
+    ]
+  }
+}

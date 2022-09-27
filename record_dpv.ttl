@@ -1,118 +1,86 @@
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#> .
-@prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
-@prefix dpv-org: <https://w3id.org/dpv/dpv-org#> .
-@prefix dpv-legal: <https://w3id.org/dpv/dpv-legal#> .
-@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.com/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 
-@prefix : <https://example.com/records#> .
-
-:63ded36f-4acd-4f3c-991e-6cb636698523 a dpv:ConsentRecord ;
-    dct:hasVersion "27560-WD5" ;
-    dpv:hasIdentifier "63ded36f-4acd-4f3c-991e-6cb636698523" ;
-    dpv:hasDataSubject "96121fde-199f-4848-8942-4436e270513a" ;
-    dpv:hasNotice <https://example.com/notice/WD5> ;
-    dct:language "en" ;
-    dpv:hasAuthority :DPC-IE ;
-    dpv:hasPurpose [
-        a dpv:Purpose ;
-        dct:title "Send Newsletters with Seasonal Offers"@en ;
-        dpv:isSubTypeOf dpv:Marketing ;
-        dpv:hasLegalBasis dpv:Consent ;
-        dpv:hasPersonalData :PD1234, :PD1235 ;
-        dpv:hasDataController :C01, :C02 ;
-        dpv:hasDataSource [
-            a dpv:DataSource ;
-            dpv:hasProcessing dpv:Collect ;
-            dpv:hasDataSource dpv:DataSubject ; ] ;
-        dpv:hasDataSource [
-            a dpv:DataSource ;
-            dpv:hasProcessing dpv:Infer ;
-            dpv:hasDataSource "Service Usage" ; ] ;
-        dpv:hasProcessing dpv:Collect, dpv:Store, dpv:Profiling ;
-        dpv:hasStorageCondition [ 
-            dpv:hasLocation dpv-legal:IE ;
+ex:63ded36f-4acd-4f3c-991e-6cb636698523 a dpv:ConsentRecord ;
+    dct:conformsTo "27560-CIB" ;
+    dct:hasPart 
+        [ a dpv:ExplicitlyExpressedConsent ;
+            dct:date "2022-02-21T20:44:00" ;
+            dpv:hasConsentStatus "dpv:ConsentWithdrawn" ;
+            dpv:hasDuration 0 ;
+            dpv:hasEntity ex:96121fde-199f-4848-8942-4436e270513a ],
+        [ a dpv:ExplicitlyExpressedConsent ;
+            dct:date "2021-05-28T12:24:00" ;
+            dpv:hasConsentStatus "dpv:ConsentGiven" ;
             dpv:hasDuration 63115200 ;
-            ] ;
-        dpv:hasProcessing [
-            odrl:constraint [
-                odrl:leftOperand odrl:spatial ;
-                odrl:operator odrl:lteq ;
-                odrl:rightOperand dpv-legal:EU ;
-            ] ] ;
-        dct:isPartOf [
-            a dpv-tech:Services ;
-            dct:title "News Website XYZ Subscription" ;
-            ] ;
-        dpv:hasJurisdiction dpv-legal:EU ;
-        dpv:hasRecipient :T01, :T02 ;
-        dpv:hasWithdrawalMethod "https://example.com/notice" ;
-        dpv:hasRight <https://example.com/object-to-direct-marketing>, <https://example.com/data-portability> ;
-        dpv:hasOrganisationalMeasure <https://example.com/CoC-news-media>, <https://example.com/DPIA> ;
-    ] ;
-    dpv:hasConsentStatus dpv:ConsentWithdrawn ;
-    dct:hasPart [
-        a dpv:ConsentGiven, dpv:ExplicitlyExpressedConsent ;
-        dct:date "2021-05-28T12:24:00"^^xsd:dateTime ;
-        dpv:hasDuration 63115200 ;
-        dpv:hasEntity "96121fde-199f-4848-8942-4436e270513a"
-    ] ;
-    dpv:hasPart [
-        a dpv:ConsentWithdrawn ;
-        dct:date "2022-02-21T20:44:00"^^xsd:dateTime ;
-        dpv:hasDuration 0 ;
-        dpv:hasEntity "96121fde-199f-4848-8942-4436e270513a" ;
-    ] .
+            dpv:hasEntity ex:96121fde-199f-4848-8942-4436e270513a ] ;
+    dpv:hasDataSubject ex:96121fde-199f-4848-8942-4436e270513a ;
+    dpv:hasEntity ex:C01, ex:C02, ex:T01, ex:T02, 
+        <https://www.dataprotection.ie/> ;
+    dpv:hasPersonalDataHandling [ dct:language "en" ;
+        dpv:hasAuthority <https://www.dataprotection.ie/> ;
+        dpv:hasNotice <https://example.com/notice/29184> ;
+        dpv:hasPurpose [ a dpv:Marketing ;
+            dct:subject "News Website XYZ Subscription" ;
+            dct:title "Send Newsletters with Seasonal Offers" ;
+            dpv:hasDataController ex:C01, ex:C02 ;
+            dpv:hasDataSource 
+                [ dpv:hasPersonalData "ServiceUsage" ;
+                    dpv:hasProcessing "dpv:Infer" ],
+                [ dpv:hasDataSource "dpv:DataSubject" ;
+                    dpv:hasProcessing "dpv:Collect" ] ;
+            dpv:hasJurisdiction "EU" ;
+            dpv:hasLegalBasis dpv:Consent ;
+            dpv:hasOrganisationalMeasure ex:CoC-news-media, ex:dpia ;
+            dpv:hasPersonalData 
+                [ a dpv:pd_Email ; 
+                    dpv:hasContext "dpv:Optional" ],
+                [ a dpv:SpecialCategoryPersonalData ;
+                    dpv:hasContext "dpv:Required" ] ;
+            dpv:hasProcessing 
+                [ a dpv:Obtain, dpv:Store ; dpv:hasLocation "IE" ] ;
+            dpv:hasRecipient ex:T01, ex:T02 ;
+            dpv:hasRight 
+                [ a dpv-gdpr:A20, dpv-gdpr:A7-3 ;
+                    dpv:isExercisedAt "ex:notice" ] ;
+            dpv:hasStorageCondition [ dpv:hasDuration 63115200 ; 
+                dpv:hasLocation "IE" ] ] ] .
 
-<https://example.com/DPIA> a dpv:DPIA ;
-    dct:created "2020-09-01"^^xsd:date .
-<https://example.com/CoC-news-media> a dpv:CodeOfConduct .
-<https://example.com/data-portability> a dpv-gdpr:A20 .
-<https://example.com/object-to-direct-marketing> a dpv-gdpr:A21 .
+ex:C02 a dpv:DataController, dpv:ServiceProvider ;
+    foaf:name "Beta Inc." ;
+    foaf:page "https://example.com/BetaInc" ;
+    dpv:hasAddress "Frankfurt, Germany" .
 
-:C01 a dpv:LegalEntity, dpv:DataController ;
-    dpv:hasAddress "Dublin, Ireland" ;
-    dpv:hasAddress "https://example.com/AcmeInc"^^xsd:anyURI ;
-    dpv:hasName "Acme Inc." ;
-    dpv:hasContact "mailto:contact@acme.example.com" ;
-    dpv:hasContact [
-        a dpv-org:SocialMediaHandle ;
-        dpv:hasIdentifier "@acme" ;
-        ] ;
-    dct:description "Service Provider for News"@en .
+ex:T01 a dpv:DataProcessor, dpv:Recipient ;
+    foaf:name "Delta" ;
+    foaf:page "https://example.com/Delta" ;
+    dpv:hasAddress "Paris, France" .
 
-:C02 a dpv:LegalEntity, dpv:DataController ;
-    dpv:hasAddress "Frankfurt, Germany" ;
-    dpv:hasAddress "https://example.com/BetaInc"^^xsd:anyURI ;
-    dpv:hasName "Beta Inc." ;
-    dct:description "Service Provider for Payment"@en .
+ex:T02 a dpv:Recipient, dpv:ThirdParty ;
+    foaf:name "Epsilon Co." ;
+    foaf:page "https://example.com/Epsilon" ;
+    dpv:hasAddress "Dublin, Ireland" .
 
-:T01 a dpv:LegalEntity, dpv:Recipient, dpv:ThirdParty ;
-    dpv:hasAddress "Paris, France" ;
-    dpv:hasAddress "https://example.com/Delta"^^xsd:anyURI ;
-    dpv:hasName "Delta" ;
-    dct:description "Recipient for Analytics"@en .
+ex:CoC-news-media a dpv:CodeOfConduct .
 
-:T02 a dpv:LegalEntity, dpv:Recipient, dpv:ThirdParty ;
-    dpv:hasAddress "Dublin, Ireland" ;
-    dpv:hasAddress "https://example.com/Epsilon"^^xsd:anyURI ;
-    dpv:hasName "Epsilon Co." ;
-    dpv:hasContact "post:11 Rue St., Dublin, Ireland" ;
-    dct:description "Recipient for Market Research"@en .
+ex:dpia a dpv:DPIA .
 
-:DPC-IE a dpv:DataProtectionAuthority ;
-    dpv:hasAddress "Dublin, Ireland" ;
-    dpv:hasAddress "https://example.com/dpc"^^xsd:anyURI ;
-    dpv:hasName "Data Protection Commission"@en ;
-    dct:description "Lead Authority"@en .
+ex:C01 a dpv:DataController, dpv:ServiceProvider ;
+    foaf:OnlineAccount [ foaf:accountName "@acme" ;
+            foaf:name "SocialMedia" ] ;
+    foaf:mbox "acme@example.com" ;
+    foaf:name "Acme Inc." ;
+    foaf:page "https://example.com/AcmeInc" ;
+    dpv:hasAddress "Dublin, Ireland" .
 
-:PD1234 a dpv:PersonalData ;
-    dpv:isSubTypeOf dpv-pd:Email ;
-    dpv:hasContext dpv:Required .
+<https://www.dataprotection.ie/> a dpv:DataProtectionAuthority,
+        dpv-gdpr:LeadSA ;
+    foaf:name "Data Protection Commission" ;
+    foaf:page "https://www.dataprotection.ie/" ;
+    dpv:hasAddress "Dublin, Ireland" .
 
-:PD1235 a dpv:PersonalData ;
-    dpv:isSubTypeOf dpv-pd:Name ;
-    dpv:hasContext dpv:Optional .
+ex:96121fde-199f-4848-8942-4436e270513a a dpv:DataSubject .

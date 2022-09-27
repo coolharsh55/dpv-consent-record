@@ -1,6 +1,6 @@
 {
     "record": {
-        "schema_version": "27560-WD5",
+        "schema_version": "27560-CIB",
         "record_id": "63ded36f-4acd-4f3c-991e-6cb636698523",
         "pii_principal_id": "96121fde-199f-4848-8942-4436e270513a"
     },
@@ -45,7 +45,7 @@
             },
             "codes_of_conduct": "https://example.com/CoC-news-media",
             "impact_assessment": "https://example.com/dpia",
-            "authorty_party": "DPC-IE",
+            "authority_party": "DPC-IE",
         } ]
     },
     "party_identification": [

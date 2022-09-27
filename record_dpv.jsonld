@@ -9,8 +9,8 @@
   },
   "@id": "ex:63ded36f-4acd-4f3c-991e-6cb636698523",
   "@type": "dpv:ConsentRecord",
-  "dct:conformsTo": "27560-WD5",
-  "hasDataSubject": { "@id": "ex:96121fde-199f-4848-8942-4436e270513a" } },
+  "dct:conformsTo": "27560-CIB",
+  "hasDataSubject": { "@id": "ex:96121fde-199f-4848-8942-4436e270513a" },
   "hasPersonalDataHandling": {
     "hasNotice": { "@id": "https://example.com/notice/29184" },
     "dct:language": "en",
@@ -51,7 +51,7 @@
       ],
       "hasOrganisationalMeasure": [
         {
-          "@id": "https://example.com/CoC-news-media",
+          "@id": "ex:CoC-news-media",
           "@type": "dpv:CodeOfConduct"
         }, {
           "@id": "ex:dpia",
@@ -67,7 +67,6 @@
       "foaf:mbox": "acme@example.com",
       "foaf:page": "https://example.com/AcmeInc",
       "foaf:name": "Acme Inc.",
-      "party_type": "",
       "@type": [ "dpv:DataController", "dpv:ServiceProvider" ],
       "foaf:OnlineAccount": { 
         "foaf:name": "SocialMedia", 
@@ -75,21 +74,21 @@
       }
     },
     {
-      "@id": "C02",
+      "@id": "ex:C02",
       "hasAddress": "Frankfurt, Germany",
       "foaf:page": "https://example.com/BetaInc",
       "foaf:name": "Beta Inc.",
       "@type": [ "dpv:DataController", "dpv:ServiceProvider" ]
     },
     {
-      "@id": "T01",
+      "@id": "ex:T01",
       "hasAddress": "Paris, France",
       "foaf:page": "https://example.com/Delta",
       "foaf:name": "Delta",
       "@type": [ "dpv:DataProcessor", "dpv:Recipient" ]
     },
     {
-      "@id": "T02",
+      "@id": "ex:T02",
       "hasAddress": "Dublin, Ireland",
       "foaf:page": "https://example.com/Epsilon",
       "foaf:name": "Epsilon Co.",
