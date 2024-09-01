@@ -1,0 +1,119 @@
+{
+  "dct:conformsTo": "dpv-27560:record-2",
+  "dpv:hasIdentifier": "UUID-4",
+  "dpv:hasDataSubject": {
+    "@type": ["dpv:DataSubject", "dpv:Customer"],
+    "dpv:hasIdentifier": "UUID-4"
+  },
+  "dct:created": "2024-01-14T00:25:11.840Z",
+  "dct:creator": "company:SignatuAS",
+  "dct:language": "en",
+  "dpv:hasProcess": [
+    {
+      "@type": "dpv:Process",
+      "dpv:hasPurpose": ["dpv:Marketing", "dpv:ServiceProvision"],
+      "dpv:hasPersonalData": [
+        "pd:Name",
+        {
+          "@type": ["dpv:SensitivePersonalData"],
+          "skos:broader": ["pd:Email"],
+          "rdf:value": "hello@example.com"
+        },
+        {
+          "skos:broader": ["pd:BirthCountry"],
+          "rdf:value": "loc:NO"
+        }
+      ],
+      "dpv:hasProcessing": ["dpv:Collect", "dpv:Store", "dpv:Use", "dpv:Share"],
+      "dpv:hasDataController": ["company:SignatuAS"],
+      "dpv:hasDataProcessor": ["company:Alpha"],
+      "dpv:hasRecipient": ["company:SignatuAS", "company:Alpha", "company:Beta"],
+      "dpv:hasDataSource": [
+        {
+          "@type": ["dpv:DataSubjectDataSource"],
+          "dpv:hasProcessing": "dpv:Collect"
+        }
+      ],
+      "dpv:hasStorageCondition": [
+        {
+          "@type": ["dpv:StorageLocation"],
+          "dpv:hasLocation": ["loc:IE", "loc:DE"]
+        },
+        {
+          "@type": ["dpv:StorageDuration"],
+          "dpv:hasDuration": {
+            "@type": ["dpv:TemporalDuration"],
+            "rdf:value": "P6M"
+          }
+        }
+      ],
+      "dpv:hasLegalBasis": ["dpv:ExpressedConsent", "eu-gdpr:A6-1-a"],
+      "dpv:hasRight": ["eu-gdpr:7-3"],
+      "dpv:hasConsentControl": {
+        "@type": [
+            "dpv:ProvideConsent", 
+            "dpv:WithdrawConsent", 
+            "dpv:ReaffirmConsent"],
+        "dpv:isExercisedAt": "https://example.com/manage-consent"
+      },
+      "dpv:hasConsentStatus": [
+        {
+          "@type": ["dpv:ConsentGiven", "dpv:ExpressedConsent"],
+          "dpv:isIndicatedAtTime": "2023-11-05T16:08:50",
+          "dpv:hasDuration": {
+            "@type": ["dpv:TemporalDuration"],
+            "rdf:value": "P6M"
+          },
+          "dpv:hasNotice": {
+            "@type": ["dpv:ConsentNotice"],
+            "dpv:hasIdentifier": "UUID-4",
+            "dpv:hasLocation": "http://example.com/"
+          },
+          "dpv:isExercisedAt": "https://example.com/manage-consent"
+        },
+        {
+          "@type": ["dpv:ConsentWithdrawn"],
+          "dpv:isIndicatedAtTime": "2024-01-05T16:08:50",
+          "dpv:hasNotice": {
+            "@type": ["dpv:ConsentNotice"],
+            "dpv:hasIdentifier": "UUID-4",
+            "dpv:hasLocation": "http://example.com/"
+          },
+          "dpv:isExercisedAt": "https://example.com/manage-consent"
+        }
+      ]
+    }
+  ],
+  "dpv:hasEntity": {
+    "company:Signatu": {
+      "@type": ["dpv:Organisation", "dpv:DataController"],
+      "dpv:hasName": "Signatu AS",
+      "dpv:hasAddress": "loc:NO-03",
+      "dpv:hasContact": {
+        "schema:email": "email@example.com",
+        "schema:telephone": "000-000-000",
+        "schema:url": "https://example.com"
+      }
+    },
+    "company:Alpha": {
+      "@type": ["dpv:Organisation", "dpv:DataProcessor"],
+      "dpv:hasName": "Alpha",
+      "dpv:hasAddress": "loc:IE",
+      "dpv:hasContact": {
+        "schema:email": "email@example.com",
+        "schema:telephone": "000-000-000",
+        "schema:url": "https://example.com"
+      }
+    },
+    "company:Beta": {
+      "@type": ["dpv:Organisation", "dpv:ThirdParty"],
+      "dpv:hasName": "Beta",
+      "dpv:hasAddress": "loc:NL",
+      "dpv:hasContact": {
+        "schema:email": "email@example.com",
+        "schema:telephone": "000-000-000",
+        "schema:url": "https://example.com"
+      }
+    }
+  }
+}
