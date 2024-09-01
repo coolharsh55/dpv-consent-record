@@ -1,0 +1,83 @@
+{
+  "@type": "dpv:ConsentRecord",
+  "dpv:hasDataSubject": { "@type": "dpv:DataSubject", "dpv:hasIdentifier": "3"},
+  "dpv:hasProcess": [
+    {
+      "@type": "dpv:Process",
+      "dpv:hasPurpose": {
+	   "@type": "dpv:Purpose",
+        "description": "To monitor employee activities to ensure compliance with company policies and improve productivity.",
+        "skos:broader": "dpv:AcademicResearch"
+      },
+      "dpv:hasRecipient": [
+        "company:1347"
+      ],
+      "dpv:hasDataController": "company:1347",
+      "dpv:hasJurisdiction": [
+        "dpv:NotAvailable"
+      ],
+      "dpv:hasLegalBasis": [
+        "eu-gdpr:A49-1-g"
+      ],
+      "dpv:hasPersonalData": [
+        "pd:Identifier",
+        "pd:DeviceBased",
+        "pd:BrowserHistory",
+        "pd:EmailContent",
+        "pd:Location"
+      ],
+      "dpv:hasStorageCondition": [
+        {
+          "@type": "dpv:StorageLocation",
+          "dpv:hasLocation": [
+            "loc:EU"
+          ]
+        },
+        {
+          "@type": "dpv:StorageDuration",
+          "dpv:hasDuration": "P1M"
+        }
+      ],
+      "dpv:hasProcessingCondition": [
+        {
+          "@type": "dpv:ProcessingLocation",
+          "location": [
+            "loc:AL"
+          ]
+        },
+        {
+          "@type": "dpv:ProcessingDuration",
+          "duration": "P12M"
+        }
+      ],
+      "dpv:hasRight": [
+        "eu-gdpr:A16",
+        "eu-gdpr:A14"
+      ]
+    }
+  ],
+  "dpv:hasEntity": [
+    {
+      "dpv:hasIdentifier": "3",
+      "@type": "dpv:DataSubject",
+      "@id": "https://api.signatu.com/vaults/default/subjects/3",
+      "dpv:hasName": "dpv:NotAvailable",
+      "dpv:hasLocation": "dpv:NotAvailable"
+    },
+    {
+      "@id": "company:1347",
+      "@type": "dpv:Entity",
+      "dpv:hasName": "Signatu AS",
+      "iri": "https://api.signatu.com/companies/1347",
+      "dpv:hasLocation": "loc:CA",
+      "dpv:hasContact": "dpv:NotAvailable"
+    }
+  ],
+  "dpv:hasNNotice": [
+    {
+	 "@type": "dpv:ConsentNotice",
+      "@id": "https://example.com/notice/1",
+      "language": "EN"
+    }
+  ]
+}

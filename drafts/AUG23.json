@@ -1,0 +1,161 @@
+{
+  "@type": "dpv:ConsentRecord",
+  "dpv:hasDataSubject": {
+    "@type": "dpv:DataSubject",
+    "dpv:hasIdentifier": "3"
+  },
+  "dpv:hasProcess": [
+    {
+      "@type": "dpv:Process",
+      "dpv:hasPurpose": {
+        "@type": "dpv:Purpose",
+        "description": "To ensure the safety and security of employees and company assets through video surveillance.",
+        "skos:broader": "dpv:EnforceSecurity"
+      },
+      "dpv:hasRecipient": [],
+      "dpv:hasDataController": "company:1347",
+      "dpv:hasJurisdiction": [
+        "dpv:NotAvailable"
+      ],
+      "dpv:hasLegalBasis": [
+        "eu-gdpr:A6-1-a-non-explicit-consent"
+      ],
+      "dpv:hasPersonalData": [
+        "pd:Picture",
+        "pd:Identifier",
+        "pd:Time"
+      ],
+      "dpv:hasStorageCondition": [],
+      "dpv:hasProcessingCondition": [],
+      "dpv:hasRight": []
+    },
+    {
+      "@type": "dpv:Process",
+      "dpv:hasPurpose": {
+        "@type": "dpv:Purpose",
+        "description": "To monitor and control access to restricted areas within the company premises.",
+        "skos:broader": "dpv:EnforceAccessControl"
+      },
+      "dpv:hasRecipient": [],
+      "dpv:hasDataController": "company:1347",
+      "dpv:hasJurisdiction": [
+        "dpv:NotAvailable"
+      ],
+      "dpv:hasLegalBasis": [
+        "eu-gdpr:A6-1-a"
+      ],
+      "dpv:hasPersonalData": [
+        "pd:Identifier",
+        "pd:Biometric"
+      ],
+      "dpv:hasStorageCondition": [
+        {
+          "@type": "dpv:StorageLocation",
+          "dpv:hasLocation": [
+            "loc:EA",
+            "loc:EF"
+          ]
+        },
+        {
+          "@type": "dpv:StorageDuration",
+          "dpv:hasDuration": "P24M"
+        }
+      ],
+      "dpv:hasProcessingCondition": [
+        {
+          "@type": "dpv:ProcessingLocation",
+          "dpv:hasLocation": [
+            "loc:AF"
+          ]
+        },
+        {
+          "@type": "dpv:ProcessingDuration",
+          "dpv:hasDuration": "P1M"
+        }
+      ],
+      "dpv:hasRight": []
+    },
+    {
+      "@type": "dpv:Process",
+      "dpv:hasPurpose": {
+        "@type": "dpv:Purpose",
+        "description": "To monitor employee activities to ensure compliance with company policies and improve productivity.",
+        "skos:broader": "dpv:AcademicResearch"
+      },
+      "dpv:hasRecipient": [
+        "company:1347"
+      ],
+      "dpv:hasDataController": "company:1347",
+      "dpv:hasJurisdiction": [
+        "dpv:NotAvailable"
+      ],
+      "dpv:hasLegalBasis": [
+        "eu-gdpr:A6-1-a"
+      ],
+      "dpv:hasPersonalData": [
+        "pd:Identifier",
+        "pd:DeviceBased",
+        "pd:BrowserHistory",
+        "pd:EmailContent",
+        "pd:Location"
+      ],
+      "dpv:hasStorageCondition": [
+        {
+          "@type": "dpv:StorageLocation",
+          "dpv:hasLocation": [
+            "loc:EU"
+          ]
+        },
+        {
+          "@type": "dpv:StorageDuration",
+          "dpv:hasDuration": "P1M"
+        }
+      ],
+      "dpv:hasProcessingCondition": [
+        {
+          "@type": "dpv:ProcessingLocation",
+          "dpv:hasLocation": [
+            "loc:AL"
+          ]
+        },
+        {
+          "@type": "dpv:ProcessingDuration",
+          "dpv:hasDuration": "P12M"
+        }
+      ],
+      "dpv:hasRight": [
+        "eu-gdpr:A16",
+        "eu-gdpr:A14"
+      ]
+    }
+  ],
+  "dpv:hasEntity": [
+    {
+      "@id": "https://api.signatu.com/vaults/default/subjects/3",
+      "@type": "dpv:DataSubject",
+      "dpv:hasIdentifier": "3",
+      "dpv:hasName": "dpv:NotAvailable",
+      "dpv:hasLocation": "dpv:NotAvailable",
+      "dpv:hasContact": "dpv:NotAvailable"
+    },
+    {
+      "@id": "company:1347",
+      "@type": "dpv:Entity",
+      "dpv:hasName": "Signatu AS",
+      "dpv:hasLocation": "loc:CA",
+      "dpv:hasContact": "dpv:NotAvailable"
+    }
+  ],
+  "dpv:hasConsentStatus": [
+    {
+      "@type": "dpv:ConsentRequested",
+      "dpv:isIndicatedAtTime": "2024-08-23T15:21:36.886Z",
+      "dpv:isIndicatedBy": "company:1347"
+    },
+    {
+      "@type": "dpv:ConsentGiven",
+      "dpv:isIndicatedBy": "3",
+      "dpv:isIndicatedAtTime": "2024-08-23T15:21:36.886Z"
+    }
+  ]
+}

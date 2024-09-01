@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "hasProcess": {
+      "type": "object",
+      "if": {
+        "properties": {
+          "hasProcess": {
+            "type": "object"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "hasProcess": {
+            "required": ["hasConsentStatus"]
+          }
+        }
+      },
+      "else": {
+        "required": ["hasConsentStatus"]
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
